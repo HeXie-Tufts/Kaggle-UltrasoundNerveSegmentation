@@ -139,29 +139,30 @@ class ImageDataGenerator(object):
     real-time data augmentation.
     Assume X is train img, Y is train label (same size as X with only 0 or 255 for values)
     # Arguments
-        featurewise_center: set input mean to 0 over the dataset. Only to X
-        samplewise_center: set each sample mean to 0. Only to X
-        featurewise_std_normalization: divide inputs by std of the dataset. Only to X
-        samplewise_std_normalization: divide each input by its std. Only to X
-        zca_whitening: apply ZCA whitening. Only to X
-        rotation_range: degrees (0 to 180). To X and Y
-        width_shift_range: fraction of total width. To X and Y
-        height_shift_range: fraction of total height. To X and Y
-        shear_range: shear intensity (shear angle in radians). To X and Y
+        featurewise_center: set input mean to 0 over the dataset. 
+        samplewise_center: set each sample mean to 0. 
+        featurewise_std_normalization: divide inputs by std of the dataset. 
+        samplewise_std_normalization: divide each input by its std. 
+        zca_whitening: apply ZCA whitening. 
+        rotation_range: degrees (0 to 180). 
+        width_shift_range: fraction of total width. 
+        height_shift_range: fraction of total height. 
+        shear_range: shear intensity (shear angle in radians). 
         zoom_range: amount of zoom. if scalar z, zoom will be randomly picked
             in the range [1-z, 1+z]. A sequence of two can be passed instead
-            to select this range. To X and Y
-        channel_shift_range: shift range for each channels. Only to X
+            to select this range. 
+        channel_shift_range: shift range for each channels. 
         fill_mode: points outside the boundaries are filled according to the
             given mode ('constant', 'nearest', 'reflect' or 'wrap'). Default
             is 'nearest'. For Y, always fill with constant 0
         cval: value used for points outside the boundaries when fill_mode is
             'constant'. Default is 0.
-        horizontal_flip: whether to randomly flip images horizontally. To X and Y
-        vertical_flip: whether to randomly flip images vertically. To X and Y
+        horizontal_flip: whether to randomly flip images horizontally. 
+        vertical_flip: whether to randomly flip images vertically. 
+        elastic_trans: elastic transform parameters (alpha, sigma, alpha_affine)
         rescale: rescaling factor. If None or 0, no rescaling is applied,
             otherwise we multiply the data by the value provided (before applying
-            any other transformation). Only to X
+            any other transformation). 
         dim_ordering: 'th' or 'tf'. In 'th' mode, the channels dimension
             (the depth) is at index 1, in 'tf' mode it is at index 3.
             It defaults to the `image_dim_ordering` value found in your
