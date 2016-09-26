@@ -16,7 +16,6 @@ import numpy as np
 import re
 from scipy import linalg
 import scipy.ndimage as ndi
-# from six.moves import range
 import os
 import threading
 from scipy.ndimage.interpolation import map_coordinates
@@ -26,7 +25,7 @@ import cv2
 from keras import backend as K
 
 
-# Function to distort image
+# Function to distort image through elastic transformation
 def elastic_transform(image, alpha, sigma, alpha_affine):
     """Elastic deformation of images as described in [Simard2003]_ (with modifications).
     .. [Simard2003] Simard, Steinkraus and Platt, "Best Practices for
@@ -138,7 +137,7 @@ def img_to_array(img, dim_ordering='default'):
 class ImageDataGenerator(object):
     '''Generate minibatches with
     real-time data augmentation.
-    Assume X is train img, Y is train label (same size as X with only 0 and 255 for values)
+    Assume X is train img, Y is train label (same size as X with only 0 or 255 for values)
     # Arguments
         featurewise_center: set input mean to 0 over the dataset. Only to X
         samplewise_center: set each sample mean to 0. Only to X
